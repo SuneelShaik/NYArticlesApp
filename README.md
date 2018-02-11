@@ -30,7 +30,7 @@ XCode 9.2 or later
 
 iOS 11.2 SDK or later
 
-MacOS 10.23 or later
+MacOS 10.12 or later
 
 Swift 4.0
 
