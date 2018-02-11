@@ -2,16 +2,16 @@
 
 An iOS app displays the New York Times Most Popular Articles.  This app is a very simple app that basically does these 2 things:
 1. Allows you to see the most popular articles for Today, past week and one month.
-2. Allows you to see the details of each article when the itemson the list are tapped
+2. Allows you to see the details of each article when the items on the list are tapped.
 
 
 Design Pattern
 ==============
-Model View Controller (MVC)
+Model-view-controller(MVC)
 
 Packages
 ========
-NYTArticleHomeViewController.swift : This class will shows the list popular articles.
+NYTArticleHomeViewController.swift : This class will shows the list of popular articles.
 
 NYTArticleDetailsViewController.swift : This class will shows each article in details.
 
@@ -21,7 +21,7 @@ NYTMediaModel.swift : This is an model object which holds the Article media deta
 
 NYTServiceManager.swift : This class is responsible for making server communications.
 
-NYTDataHandler.swift : This class is responsible for parsing received response and making model object.
+NYTDataHandler.swift : This class is responsible for parsing received response and making model objects.
 
 Requirements
 =============
