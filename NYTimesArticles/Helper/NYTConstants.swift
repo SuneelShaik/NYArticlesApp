@@ -49,6 +49,21 @@ struct NYTConstants {
     struct LabelStirngs {
         static let publishString = "Published date : "
     }
-    
-    
+    //Color properties
+    struct ModelClassStrings {
+        static let section = "section"
+        static let byLine = "byline"
+        static let type = "type"
+        static let title = "title"
+        static let abstract = "abstract"
+        static let publishedDate = "published_date"
+        static let source = "source"
+        static let media = "media"
+        static let subType = "subtype"
+        static let mediaMetaData = "media-metadata"
+        static let url = "url"
+        static let format = "format"
+        static let height = "height"
+        static let width = "width"
+    }
 }

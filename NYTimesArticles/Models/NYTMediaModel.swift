@@ -20,9 +20,9 @@ class NYTMediaModel: NSObject, Mappable {
     }
     // Mappable
     func mapping(map: Map) {
-        url          <- map["url"]
-        format       <- map["format"]
-        height       <- map["height"]
-        width        <- map["width"]
+        url          <- map[NYTConstants.ModelClassStrings.url]
+        format       <- map[NYTConstants.ModelClassStrings.format]
+        height       <- map[NYTConstants.ModelClassStrings.height]
+        width        <- map[NYTConstants.ModelClassStrings.width]
     }
 }

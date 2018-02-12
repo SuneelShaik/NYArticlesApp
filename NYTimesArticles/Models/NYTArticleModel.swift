@@ -26,14 +26,14 @@ class NYTArticleModel: NSObject, Mappable {
     
     // Mappable
     func mapping(map: Map) {
-        section          <- map["section"]
-        byLine           <- map["byline"]
-        type             <- map["type"]
-        title            <- map["title"]
-        abstract         <- map["abstract"]
-        publishDate      <- map["published_date"]
-        source          <- map["source"]
-        media            <- map["media"]
+        section          <- map[NYTConstants.ModelClassStrings.section]
+        byLine           <- map[NYTConstants.ModelClassStrings.byLine]
+        type             <- map[NYTConstants.ModelClassStrings.type]
+        title            <- map[NYTConstants.ModelClassStrings.title]
+        abstract         <- map[NYTConstants.ModelClassStrings.abstract]
+        publishDate      <- map[NYTConstants.ModelClassStrings.publishedDate]
+        source           <- map[NYTConstants.ModelClassStrings.source]
+        media            <- map[NYTConstants.ModelClassStrings.media]
     }
 }
 
@@ -49,8 +49,8 @@ class NYTMedia: NSObject, Mappable {
     }
     // Mappable
     func mapping(map: Map) {
-        type             <- map["type"]
-        subType          <- map["subtype"]
-        mediaModel       <- map["media-metadata"]
+        type             <- map[NYTConstants.ModelClassStrings.type]
+        subType          <- map[NYTConstants.ModelClassStrings.subType]
+        mediaModel       <- map[NYTConstants.ModelClassStrings.mediaMetaData]
     }
 }
