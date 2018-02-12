@@ -49,7 +49,7 @@ struct NYTConstants {
     struct LabelStirngs {
         static let publishString = "Published date : "
     }
-    //Color properties
+    //Model class properties
     struct ModelClassStrings {
         static let section = "section"
         static let byLine = "byline"
