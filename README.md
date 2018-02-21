@@ -5,7 +5,7 @@ An iOS app displays the New York Times Most Popular Articles.  This app is a ver
 2. Allows you to see the details of each article when the items on the list are tapped.
 
 
-Design Pattern
+Design Pattern(s)
 ==============
 Model-view-controller(MVC)
 
