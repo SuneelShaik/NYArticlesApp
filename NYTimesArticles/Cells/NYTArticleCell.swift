@@ -27,34 +27,4 @@ class NYTArticleCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    //MARK: - 
-    //MARK: - Setup configuration
-    //Populate the article cell fields with the real data
-    func configureArticleCell(articleModel : NYTArticleModel) {
-        //Check nil and assign the title data
-        if let title = articleModel.title {
-            articleTitle.text = title
-        }
-        //Check nil and assign the author data
-        if let byLine = articleModel.byLine {
-            articleByLine.text = byLine
-        }
-        //Check nil and assign the source data
-        if let section = articleModel.section {
-            articleSection.text = section
-        }
-        //Set article thumbnail picture
-        let mediaModel = articleModel.media?.first
-        if let thumbnailImageString = mediaModel?.mediaModel?[0].url {
-            articleImageView.sd_setImage(with: URL(string: thumbnailImageString), placeholderImage: UIImage(named: NYTConstants.ImageProperties.noImage))
-        }
-        //Check nil and assign the publoished date data
-        if let publishedDate = articleModel.publishDate {
-            // Initialize with a string and separately declared attribute(s)
-            let attributesStringColor = [ NSAttributedStringKey.foregroundColor: NYTConstants.ColorProperties.appColor]
-            let dateAttributesString = NSMutableAttributedString(string: publishedDate, attributes: attributesStringColor)
-            articlePublishedDate.setAttributedTitle(dateAttributesString, for: .normal)
-            articlePublishedDate.setNeedsLayout()
-        }
-    }
 }

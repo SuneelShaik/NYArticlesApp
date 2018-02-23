@@ -65,11 +65,39 @@ class NYTArticleHomeViewController: UIViewController, UITableViewDelegate, UITab
         let cell:NYTArticleCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NYTArticleCell
         
         //Loop through each article model object
-        let articalModel = self.articalModelList[indexPath.row]
+        let articleModel = self.articalModelList[indexPath.row]
         //Send article model to prepare cell for populating data
-        cell.configureArticleCell(articleModel: articalModel)
+        self.configureArticleCell(cell: cell, articleModel: articleModel)
         
         return cell
+    }
+    
+    func configureArticleCell(cell:NYTArticleCell, articleModel:NYTArticleModel) {
+        //Check nil and assign the title data
+        if let title = articleModel.title {
+            cell.articleTitle.text = title
+        }
+        //Check nil and assign the author data
+        if let byLine = articleModel.byLine {
+            cell.articleByLine.text = byLine
+        }
+        //Check nil and assign the source data
+        if let section = articleModel.section {
+            cell.articleSection.text = section
+        }
+        //Set article thumbnail picture
+        let mediaModel = articleModel.media?.first
+        if let thumbnailImageString = mediaModel?.mediaModel?[0].url {
+            cell.articleImageView.sd_setImage(with: URL(string: thumbnailImageString), placeholderImage: UIImage(named: NYTConstants.ImageProperties.noImage))
+        }
+        //Check nil and assign the publoished date data
+        if let publishedDate = articleModel.publishDate {
+            // Initialize with a string and separately declared attribute(s)
+            let attributesStringColor = [ NSAttributedStringKey.foregroundColor: NYTConstants.ColorProperties.appColor]
+            let dateAttributesString = NSMutableAttributedString(string: publishedDate, attributes: attributesStringColor)
+            cell.articlePublishedDate.setAttributedTitle(dateAttributesString, for: .normal)
+            cell.articlePublishedDate.setNeedsLayout()
+        }
     }
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
