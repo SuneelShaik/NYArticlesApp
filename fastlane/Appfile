@@ -1,0 +1,8 @@
+app_identifier "com.cognizantmobility.eventum" # The bundle identifier of your app
+apple_id "social.media@cognizant.com" # Your Apple email address
+
+itc_team_id "416340" # iTunes Connect Team ID
+team_id "LLT7CM2LUX" # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
